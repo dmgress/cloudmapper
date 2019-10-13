@@ -2,6 +2,8 @@
 
 This page describes how to visualize network environments using the `prepare` and `webserver` commands, and assumes you have already configured your account and collected the metadata about it.
 
+The network visualization will only show VPC resources, ie. those things with a Security Group attached to it.  It can show EC2, RDS, ELB (original and v2), Redshift, ElasticSearch, ECS, Lambda, and VPC Endpoints (ie. the Gateway Endpoints for S3 and DynamoDB, and PrivateLink).  This will NOT show your S3 buckets. It will ONLY show the Gateway Endpoint to the S3 service if you created one (your AWS account does not have one by default).  Again, only Lambdas and others resources that are inside a VPC will be shown.  The edges shown are only based on the ingress rules of the Security Groups, and not the resource policy, or Network ACLs, or Route Tables.
+
 ## Prepare the data
 
 This step converts the collected AWS data into a format that can be displayed in the browser by generating a `web/data.json` file.
@@ -14,6 +16,7 @@ There are a number of filtering options that can be applied here to reduce the n
 The most useful filtering options:
 * `--regions`: Restrict the diagram to a set regions, ex. `us-east-1,us-east-2`
 * `--vpc-ids` and `--vpc-names`: Restrict the diagram to a set of VPCs.
+* `--tags`: Filter by tags, for example `--tags Env=Prod --tags Env=Test,Name=Bastion` will filter to all resources tagged with a key `Env` that has value `Prod`, or where `Env=Test` and `Name=Bastion`. In this way, a the tags in a set are AND'd, and the tag sets are OR'd.
 * `--collapse-by-tag`: This is very useful to provide a tag name, and all nodes with that tag will be reduced to a single displayed node.
 
 The other filtering options are:

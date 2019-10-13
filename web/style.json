@@ -150,7 +150,7 @@
             "selector": "[type = \"ec2\"]",
             "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/Compute/Compute_AmazonEC2.svg",
+            "background-image": "./icons/aws/ec2.svg",
             "background-fit": "contain",
             "background-clip": "none"
             }
@@ -159,7 +159,7 @@
         "selector": "[type = \"grouped_ec2\"]",
         "css": {
         "background-opacity": 0,
-        "background-image": "./icons/aws/Compute/Compute_AmazonEC2_instances.svg",
+        "background-image": "./icons/aws/grouped_ec2s.svg",
         "background-fit": "contain",
         "background-clip": "none"
         }
@@ -168,7 +168,7 @@
         "selector": "[type = \"autoscaling\"]",
         "css": {
         "background-opacity": 0,
-        "background-image": "./icons/aws/Compute/Compute_AmazonEC2_AutoScaling.svg",
+        "background-image": "./icons/aws/autoscaling.svg",
         "background-fit": "contain",
         "background-clip": "none"
         }
@@ -177,25 +177,25 @@
             "selector": "[type = \"elb\"]",
             "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/Compute/Compute_ElasticLoadBalancing.svg",
+            "background-image": "./icons/aws/elb.svg",
             "background-fit": "contain",
             "background-clip": "none"
             }
     },
     {
-            "selector": "[type = \"s3\"]",
-            "css": {
-            "background-opacity": 0,
-            "background-image": "./icons/aws/Storage/Storage_AmazonS3.svg",
-            "background-fit": "contain",
-            "background-clip": "none"
-            }
+        "selector": "[type = \"elbv2\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/elb.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
     },
     {
             "selector": "[type = \"rds\"]",
             "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/Database/Database_AmazonRDS.svg",
+            "background-image": "./icons/aws/rds.svg",
             "background-fit": "contain",
             "background-clip": "none"
             }
@@ -204,7 +204,7 @@
         "selector": "[type = \"rds_rr\"]",
         "css": {
         "background-opacity": 0,
-        "background-image": "./icons/aws/Database/Database_AmazonRDS_instancereadreplica.svg",
+        "background-image": "./icons/aws/rds.svg",
         "background-fit": "contain",
         "background-clip": "none"
         }
@@ -213,7 +213,7 @@
             "selector": "[type = \"ip\"]",
             "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/General/General_officebuilding.svg",
+            "background-image": "./icons/aws/ip.svg",
             "background-fit": "contain",
             "background-clip": "none"
             }
@@ -222,22 +222,190 @@
             "selector": "[type = \"cloud\"]",
             "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/General/General_Internet.svg",
+            "background-image": "./icons/aws/internet.svg",
             "background-fit": "contain",
             "background-clip": "none",
             "width": 200,
             "height": 200
             }
     },
-    
-    
-    
+    {
+        "selector": "[type = \"s3\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/s3.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"dynamodb\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/dynamodb.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"vpc_endpoint\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/vpc_endpoint.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"redshift\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/redshift.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"elasticsearch\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/elasticsearch.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"kinesis\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/kinesis.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"sqs\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/sqs.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"sns\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/sns.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"ecs\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/ecs.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"ecr\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/ecr.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"fargate\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/fargate.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"lambda\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/lambda.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"codebuild\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/codebuild.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"codecommit\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/codecommit.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"codepipeline\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/codepipeline.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"ssm\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/ssm.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"secretsmanager\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/secretsmanager.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"kms\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/kms.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"apigateway\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "./icons/aws/apigateway.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
     
     
     
     
     {
-        "selector": "[type = \"wot_account\"]",
+        "selector": "[type = \"weboftrust_account\"]",
         "css": {
             "shape": "rectangle",
             "width": "200",
@@ -282,7 +450,7 @@
             "selector": "[type = \"directconnect\"]",
             "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/General/General_corporatedatacenter.svg",
+            "background-image": "./icons/aws/directconnect.svg",
             "background-fit": "contain",
             "background-clip": "none"
             }
@@ -353,7 +521,7 @@
         "selector": "[type = \"aws\"]",
         "css": {
             "background-opacity": 0,
-            "background-image": "./icons/aws/General/General_AWScloud.svg",
+            "background-image": "./icons/aws/aws.svg",
             "background-fit": "contain",
             "background-clip": "none",
             "width": 150,
@@ -539,8 +707,154 @@
             "height": 100
         }
     },
-    
-    
+    {
+        "selector": "[type = \"Sumo Logic\"]",
+
+        "css": {
+            "background-opacity": 0,
+            "background-image": "./icons/logos/sumologic.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"Bridgecrew\"]",
+
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/bridgecrew.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"Rapid7\"]",
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/rapid7.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"nOps\"]",
+
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/nops.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"Fivetran\"]",
+
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/fivetran.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"Databricks\"]",
+
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/databricks.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"Lacework\"]",
+
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/lacework.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+    {
+        "selector": "[type = \"Onelogin\"]",
+
+        "css": {
+            "label": "",
+            "background-opacity": 0,
+            "background-image": "./icons/logos/onelogin.png",
+            "background-fit": "contain",
+            "background-clip": "none",
+            "width": 150,
+            "height": 100
+        }
+    },
+
+    {
+        "selector": "[type = \"user\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "/icons/General_user.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"role\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "/icons/SecurityIdentityCompliance_IAM_role.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"inline policy\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "/icons/inline_policy.png",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"managed policy\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "/icons/managed_policy.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
+    {
+        "selector": "[type = \"group\"]",
+        "css": {
+        "background-opacity": 0,
+        "background-image": "/icons/group.svg",
+        "background-fit": "contain",
+        "background-clip": "none"
+        }
+    },
     
     
     
@@ -553,7 +867,8 @@
         "selector": ":selected",
         "css": {
             "background-color": "#ff0",
-            "background-opacity": 0.5  
+            "background-opacity": 0.5,
+            "background-image-opacity": 0.7
         }
     },
     {

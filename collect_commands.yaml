@@ -74,6 +74,21 @@
   Parameters:
   - Name: Bucket
     Value: s3-list-buckets.json|.Buckets[]?|.Name
+- Service: s3
+  Request: get-bucket-logging
+  Parameters:
+  - Name: Bucket
+    Value: s3-list-buckets.json|.Buckets[]?|.Name
+- Service: s3
+  Request: get-bucket-location
+  Parameters:
+  - Name: Bucket
+    Value: s3-list-buckets.json|.Buckets[]?|.Name
+- Service: s3
+  Request: get-bucket-encryption
+  Parameters:
+  - Name: Bucket
+    Value: s3-list-buckets.json|.Buckets[]?|.Name
 - Service: route53
   Request: list-hosted-zones
 - Service: route53
@@ -92,6 +107,8 @@
 - Service: ec2
   Request: describe-instances
 - Service: ec2
+  Request: describe-volumes
+- Service: ec2
   Request: describe-addresses
 - Service: cloudtrail
   Request: describe-trails
@@ -109,14 +126,41 @@
   Parameters:
   - Name: DBSnapshotIdentifier
     Value: rds-describe-db-snapshots.json|.DBSnapshots[]?|.DBSnapshotIdentifier
+- Service: rds
+  Request: list-tags-for-resource
+  Parameters:
+  - Name: ResourceName
+    Value: rds-describe-db-instances.json|.DBInstances[]?|.DBInstanceArn
 - Service: elb
   Request: describe-load-balancers
 - Service: elb
   Request: describe-load-balancer-policies
+- Service: elb
+  Request: describe-tags
+  Parameters:
+  - Name: LoadBalancerNames
+    Value: elb-describe-load-balancers.json|.LoadBalancerDescriptions[]?|[[.LoadBalancerName]]
 - Service: elbv2
   Request: describe-load-balancers
+- Service: elbv2
+  Request: describe-target-groups
+  Parameters:
+  - Name: LoadBalancerArn
+    Value: elbv2-describe-load-balancers.json|.LoadBalancers[].LoadBalancerArn
+- Service: elbv2
+  Request: describe-target-health
+  Parameters:
+  - Name: TargetGroupArn
+    Value: elbv2-describe-target-groups/*|.TargetGroups[].TargetGroupArn
+- Service: elbv2
+  Request: describe-tags
+  Parameters:
+  - Name: ResourceArns
+    Value: elbv2-describe-load-balancers.json|.LoadBalancers[]?|[[.LoadBalancerArn]]
 - Service: redshift
   Request: describe-clusters
+- Service: redshift
+  Request: describe-cluster-subnet-groups
 - Service: sqs
   Request: list-queues
 - Service: sqs
@@ -202,6 +246,8 @@
 - Service: ec2
   Request: describe-vpc-endpoint-connections
 - Service: ec2
+  Request: describe-vpc-endpoints
+- Service: ec2
   Request: describe-vpn-connections
 - Service: ec2
   Request: describe-vpn-gateways
@@ -279,6 +325,25 @@
   Parameters:
   - Name: FunctionName
     Value: lambda-list-functions.json|.Functions[]?|.FunctionName
+- Service: lambda
+  Request: list-layers
+- Service: lambda
+  Request: list-layer-versions
+  Parameters:
+  - Name: LayerName
+    Value: lambda-list-layers.json|.Layers[]?|.LayerName
+- Service: ecs
+  Request: list-clusters
+- Service: ecs
+  Request: list-tasks
+  Parameters:
+  - Name: cluster
+    Value: ecs-list-clusters.json|.clusterArns[]
+- Service: ecs
+  Request: describe-tasks
+  Custom_collection: True
+- Service: eks
+  Request: describe-cluster
 - Service: logs
   Request: describe-destinations
 - Service: logs
@@ -291,21 +356,21 @@
   Request: get-load-balancers
 - Service: apigateway
   Request: get-rest-apis
-- Service: apigateway
-  Request: get-resources
-  Parameters:
-  - Name: restApiId
-    Value: apigateway-get-rest-apis.json|.items[]?|.id
-- Service: apigateway
-  Request: get-deployments
-  Parameters:
-  - Name: restApiId
-    Value: apigateway-get-rest-apis.json|.items[]?|.id
-- Service: apigateway
-  Request: get-stages
-  Parameters:
-  - Name: restApiId
-    Value: apigateway-get-rest-apis.json|.items[]?|.id
+# - Service: apigateway
+#   Request: get-resources
+#   Parameters:
+#   - Name: restApiId
+#     Value: apigateway-get-rest-apis.json|.items[]?|.id
+# - Service: apigateway
+#   Request: get-deployments
+#   Parameters:
+#   - Name: restApiId
+#     Value: apigateway-get-rest-apis.json|.items[]?|.id
+# - Service: apigateway
+#   Request: get-stages
+#   Parameters:
+#   - Name: restApiId
+#     Value: apigateway-get-rest-apis.json|.items[]?|.id
 - Service: guardduty
   Request: list-detectors
 - Service: guardduty
@@ -313,3 +378,9 @@
   Parameters:
   - Name: DetectorId
     Value: guardduty-list-detectors.json|.DetectorIds[]?|.
+- Service: organizations
+  Request: describe-organization
+- Service: organizations
+  Request: list-accounts
+# - Service: kafka
+#   Request: list-clusters
